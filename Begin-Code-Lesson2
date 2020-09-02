@@ -1,0 +1,20 @@
+2.8 - Read CSV File
+		- DataFrame = pd.read_csv("path.csv") - đọc dữ liệu vào dataFrame
+		- sử dụng df.head(n) để show n dòng đầu
+		- df.tail(n) show n dòng cuối.
+	
+2.10 - Select Rows
+		- df[start:end] - cắt dataFrame từ start index tới end index
+	
+2.11 - Compute max closing price
+		- pd.read_csv("path/{}.csv".format(variable)) - read file variable.csv // cách
+		thức truyền biến cho chuỗi trong python
+		- df['Close'].max() - extracted cột Close -> lấy giá trị max
+
+2.12 - plotting stock price data
+		- sử dụng thư viện matplotlib
+		- df.['Close'].plot()
+2.14 - Plot two columns
+		- df[['Close','Adjust Close']].plot()
+
+	

@@ -1,0 +1,117 @@
+Lesson 3:
+3.4 - Problems to solve
+		- Problems to solve + Date ranges
+							+ Multiple stocks
+							+ Align dates
+							+ Proper date order // proper - thích hợp
+
+3.8 - Create empty data frame
+		- Tạo data frame với daterange : dates = pd.date_range(start_date, end_date)
+		- df1 = pd.DataFrame(index=dates) // khởi tạo dataframe với index là date
+			thay vì mặc định là integer
+3.9 - Join SPY data
+		- dfSPY = pd.read_csv("data/SPY.csv") -> index sẽ là integer khi join vào 
+			df1 ( index là date) => các giá trị nhận được là NAN
+		- dfSPY = pd.read_csv("data/SPY.csv"), index_col="Date" , parse_dates = True) 
+			lựa chọn index là cột Date
+		- dfSPY = pd.read_csv("data/SPY.csv", index_col="Date",
+								parse_dates=True, usecols=['Date','Adj Close'],
+								na_values=['nan'])
+		- Sử lệnh lệnh join:
+			df1 = df1.join(dfSPY) => giữ lại tất cả các giá trị của df1
+									match giá trị của dfSPY vào df1
+									missing -> NAN
+		- df1 = df1.dropna() => drop tất cả các row có NAN values
+		- join() tham số 'how' -> cách thức join
+		
+3.10 - Read in more stocks
+		- khi muốn đọc nhiều stocks -> có thể sảy ra hiện tượng overlap ( trùng tên các cột)
+			=> biện pháp là sử dụng dfSPY.rename(columns={'Adj Close':'SPY'})
+		#Code:
+			symbols = ['SPY','GOOG','IBM','GLD']
+			for symbol in symbols:
+				df_temp = pd.read_csv("data/{}.csv".format(symbol), index_col='Date',
+									parse_dates=True, usecols=['Date', 'Adj Close'],
+									na_values=['nan'])
+				df_temp = df_temp.rename(columns={'Adj Close':symbol})
+				df1 = df1.join(df_temp) // using left join
+3.12 - QUIZ
+		- df.dropna(): parameter: + axis ( bỏ theo hàng hoặc cột)
+								+ how: {'any','all'} bỏ khi có any nan hoặc all nan
+								+ thresh = n: bỏ khi có >= n giá trị nan
+								+ subset = ['name'] => bỏ theo các dòng nan của cột name
+		#Code:
+		"""Utility functions"""
+		import os
+		import pandas as pd
+
+		def symbol_to_path(symbol, base_dir="data"):
+			"""Return CSV file path given ticker symbol."""
+			return os.path.join(base_dir, "{}.csv".format(str(symbol)))
+
+
+		def get_data(symbols, dates):
+			"""Read stock data (adjusted close) for given symbols from CSV files."""
+			df = pd.DataFrame(index=dates)
+			if 'SPY' not in symbols:  # add SPY for reference, if absent
+				symbols.insert(0, 'SPY')
+
+			for symbol in symbols:
+				df_temp = pd.read_csv(symbol_to_path(symbol), index_col='Date' , parse_dates=True,
+										usecols=['Date', 'Adj Close'] ,
+										na_values=['nan'])
+				df_temp = df_temp.rename(columns={'Adj Close':symbol})
+				df = df.join(df_temp)
+				if 'SPY' == symbol:
+					"""Drop nan in SPY date didn't trade"""
+					df = df.dropna(subset = [symbol])
+
+			return df
+
+
+		def test_run():
+			# Define a date range
+			dates = pd.date_range('2010-01-22', '2010-01-26')
+
+			# Choose stock symbols to read
+			symbols = ['GOOG', 'IBM', 'GLD']
+			
+			# Get stock data
+			df = get_data(symbols, dates)
+			print df
+
+
+		if __name__ == "__main__":
+			test_run()
+
+3.13 - Slicing dataFrame
+		- df2 = df1[start_date:end_date, ['GOOG', 'GLD']]
+			=> extract df1 các row từ start_date -> end_date
+				và lấy các cột GOOG và GLD
+		- Slice by row range (dates) sử dụng DataFrame.ix[]
+			df1 = df.ix['2010-01-01':'2010-01-31'] => start_date và end_date
+				phải được đặt đúng theo lịch. ( start_date < end_date )
+		- Slice by columns (symbols)
+			df1 = df['GOOG'] => select single column
+			df1 = df[['GOOG','GLD']] => select multiple columns
+		- Slice by row and column
+			df1 = df.ix['2010-03-10':'2010-03-15',['SPY','IBM']]
+			
+3.15 - Problems with plotting
+		- Khi sử dụng df.plot() để show các stocks, có thể nhìn rõ được 
+			sự thay đổi giá trị của các stock nhưng khoảng so sánh khá rộng 
+			=> các tốt hơn là cho các stock xuất phát tại cùng 1 điểm và 
+			so sánh sự tăng trưởng ( xuất phát từ 1.0)
+		- best way: df1 = df1/df1[0]
+		
+3.16 - Plotting multiple stocks
+		- plot(title = "abc") : set title
+		- plot(fontsize = 2 ) : set fontsize
+		- ax = df.plot(title=title) => ax là 1 đối tượng, và ta set các thuộc tính
+		- ax.set_xlabel("Label cho trục x")
+		- ax.set_ylabel("Label cho trục y") => đây là đối tượng có được khi thực hiện df.plot()
+	#Code:
+
+3.19 - normalizing
+	
+		
