@@ -1,0 +1,4 @@
+Lesson 4 Numpy
+
+4.9 - Generating random number
+    - np.random.random -> random từ 0.0 -> 1.0
