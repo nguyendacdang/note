@@ -1,0 +1,20 @@
+Lesson 12 - Market Mechanics
+
+12.2 - What's in an order ?   
+    order -> gửi cho người môi giới -> exc giao dịch
+    - Tìm hiểu về order, thành phần của order
+        + Buy or sell:
+        + Symbol: mã cổ phiếu, mã ETF muốn buy/sell
+        + #share: Số lượng muốn mua/ bán ( sử dụng đơn vị shares chứ k dùng amount of money)
+        + limit or Market:
+            lệnh giới hạn / lệnh thị trường: 
+                + lệnh thị trường: (market) một mức giá tốt nhưng về cơ bản là bất kể mức
+                    giá nào mà thị trường đang chịu 
+                + Lệnh giới hạn: Giới hạn mức giá cụ thể để buy/sell
+        + price: sử dụng khi là lệnh Limit
+
+12.3 - Order book
+    - 
+
+12.6 - How ordres get to exchange
+    
