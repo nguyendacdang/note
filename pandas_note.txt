@@ -1,0 +1,7 @@
+- tạo index dates = pd.date_range(start_date, end_date) pattern = "YYYY-MM-DD"
+- Tạo mới data frame:
+	df = pd.DataFrame(data=np.random.randn(5,3), colums=['1','2','3'], index=dates)
+- get Symbols dataFrame:
+	symbols = df.colums.values
+- get Index DataFrame:
+	index = df.index.values

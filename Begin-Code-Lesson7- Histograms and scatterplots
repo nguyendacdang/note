@@ -1,0 +1,42 @@
+Lesson 7 - Histograms and scatterplots:
+7.2 - A Closer look at daily returns:
+	- Histograms là 1 loại biểu đồ bar, để vẽ lên số tần suất xuất hiện 
+		của mỗi item đối với giá trị.
+		+ Chia range of data thành nhiều phần nhỏ gọi là bins
+		+ sau đó chúng ta tính số lần data matches với range across that bin
+
+7.4 - Histograms of daily returns
+	- Kurtosis - độ nhọn hay độ cong của histograms
+	- Kurtosis > 0 => có fat tails
+	- Kurtosis < 0 => skinny tails
+
+7.5 - How to plot a histogram
+	using df.hist()
+	
+7.6 - Computing histogram statistics
+	- sử dụng : plt.axvline( mean , color='w', linestyle='dashed', linewidth=2)
+	- df.kurtosis() -> tính kurtosis
+
+7.9 - scatterplots
+	: vẽ để hiện thị mối quan hệ giữa 2 bộ dữ liệu
+	
+7.10 - Slope does not equal correlation
+		- Slope ( hệ số góc , hay độ dốc)
+		- correlation (tương quan) là thước đo mức độ chặt chẽ của các điểm 
+			riêng lẻ này phù hợp với đường thẳng đó.
+			(mức độ các điểm phù hợp với đường thẳng đó)
+		- correlation = 0->1 ( k tquan -> tquan mạnh)
+		
+7.13 - Scatterplots in Python
+	- df.plot(kind='scatter', x='SPY', y='XOM')
+	- beta, alpha = np.polyfit(df['SPY'], df['XOM'], 1) ( số 1 , deg (degree)  bậc phù hợp là 1 y = mx + b)
+	- tính hệ số tương qua : 
+		df.corr(method='peason')
+		
+	#Code:
+	daily_returns.plot(kind='scatter',x ='SPY',y='XOM')
+	beta_XOM, alpha_XOM = np.polyfit(daily_returns['SPY'], daily_returns['XOM'], 1)
+	plt.plot(daily_returns['SPY'], beta_XOM*daily_returns['SPY'] + alpha_XOM, '-', color='r')
+	plot.show()
+	print daily_returns.corr(method='peason')
+	

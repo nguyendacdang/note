@@ -1,0 +1,57 @@
+Lesson 9: Optimizers building a parameterized model
+
+9.1 - What is an optimizer ? 
+	- Tìm giá trị nhỏ nhất của function
+	- Xây dựng mô hình tham số hóa dựa trên dữ liệu
+	- Tinh chỉnh phân bổ cho cổ phiếu trong danh mục đầu tư
+	
+9.3 - Minimizer in python:
+	sử dụng thư viện scipy.optimize as spo
+	min_result = spo.minimize()
+	
+9.9 - Fit a line to given data points:
+	#Code:
+		import numpy as np
+		import pandas as pd
+		import matplotlib.pyplot as plt
+		import scipy.optimize as opt
+
+		#hàm tính error 
+		def error(line, data):
+			"""line là đường fit, tính sai số của data so với đường"""
+			e = (data[:,1] - (line[0]*data[:,0] + line[1]))**2
+			return np.sum(e)
+
+		def fit_line(data, error_func):
+			"""Fit a line to give data, with error function"""
+			#Generate initial guess for line model
+			#Tạo đường thẳng ban đầu (l0) để tính optimize
+			l = np.float32([0, np.mean(data[:,1])]) #Slope = 0, Intercept =mean (y value )
+			#Plot initial guess (optional)
+			#Vẽ đường thẳng l0
+			x_ends = np.float32([-5,5])
+			plt.plot(x_ends, l[0]*x_ends + l[1], 'm--', label="initial line")
+
+			"""Tính optimize minimize với error_func, đường ban đầu là l, tham số truyền vào error_func là data, """
+			result = opt.minimize(error_func, l, args=(data), method='SLSQP' , options={'disp':True})
+			return result.x
+
+			
+		def test_run():
+			line_org = np.float32([4,2])
+			X_data = np.linspace(0,10,21)
+			Y_data = line_org[0]*X_data+line_org[1]
+			plt.plot(X_data,Y_data,'b--',label='Origin')
+
+			noise = np.random.normal(0,3,X_data.shape)
+			data = np.asfarray([X_data,Y_data+noise]).T
+			plt.plot(data[:,0] , data[:,1], 'go', label="data point")
+
+			l_fit = fit_line(data,error)
+			plt.plot(data[:,0],l_fit[0]*data[:,0] + l_fit[1] , 'r--', label="fit line")
+
+			plt.legend()
+			plt.show()
+
+		if __name__ == '__main__':
+			test_run()

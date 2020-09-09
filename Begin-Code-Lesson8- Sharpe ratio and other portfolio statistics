@@ -1,0 +1,51 @@
+Lesson 8 - Sharpe ratio and other portfolio statistics
+
+8.2 - Daily portfolio values:
+	- Hạng mục đầu tư (Portfiolo) là việc phân bổ (allocation) đầu tư cho các cổ phiếu khác nhau.
+	- sau khi phân bổ đầu tư -> tính total value of the portfolio day by day.
+	- normed = prices/prices[0] ( tỉ lệ giá / khi bắt đầu )
+	- alloced = normed*allocs ( tỉ lệ tăng trưởng giá * hệ số phân bổ)
+	- pos_vals = alloced*start_val ( tính giá trị so với số vốn là start_val)
+	- port_val = pos_vals.sum(axis = 1 )
+	
+8.3 - Portfiolo statistics
+	- daily_retuns = daily_retuns[1:]
+	- cum_returns = (port_val[-1] / port_val[0]) -1 ( tỉ lệ end - start ) -1 
+	- avg-daily_retuns = daily_retuns.mean()
+	- std_daily_returns = daily_retuns.std()
+	- sharpe.ratio
+	
+8.5 - Sharpe ratio ( tỉ lệ sharpe)
+	- là một thước đo xem lợi nhuận thu được là bao nhiêu trên một 
+		đơn vị rủi ro khi đầu tư vào một tài sản 
+		hay đầu tư theo một chiến lược kinh doanh
+	
+	- rủi ro thấp -> tốt hơn, lợi nhuận cao -> tốt hơn.
+	- SR cũng xe sét thới cái gọi là Tỉ suất lợi nhuận phi rủi ro ( Risk free rate of return)
+		giống như việc đưa tiền vào ngân hàng.
+	
+		+ Rp : portfolio return
+		+ Rf : Risk free rate of return 
+		+ Std.p : standard deviation of portfolio return
+		=> Sharpe ratio (SR) = (Rp - Rf)/Std
+
+8.6 - Computing Sharpe ratio:
+	- Công thức  S = E[Rp - Rf]/std[Rp - Rf]  (E = kỳ vọng )
+		= mean(daily_retuns - daily_rf)/std(daily_retuns - daily_rf)
+	- Risk Free Rate ? sử dụng LIBOR ( London Interbank Offer Rate)
+		+ Sử dụng lợi nhuận trong 3 tháng của kho bạc ( Treasury bill ) T-bill
+		+ sử dụng 0%
+	- RF change each day:
+		+ Giả sử RF = 10% cho 1 năm:
+		=> nếu start value = 1.0 => sau một năm sẽ có 1.1
+			=> 1.1 là tổng tài sản sau một năm
+			=> giả sử 1 năm giao dịch 252 lần 
+			=> daily_rf = căn bậc 252(1.0 + 0.1) -1 
+	=> Công thức :
+		S = mean(daily_retuns - daily_rf)/std(daily_retuns)
+		
+	- SR có thể rất khác nhau phụ thuộc vào cách lấy mẫu data. ( 1 năm, 1 tháng hoặc theo ngày)
+	- SR is an annual measure
+	- SRannualized = K*SR
+	- K = sqrt(sample per year) => ví dụ sample theo ngày (252 ngày gdich / 1 năm ) -> K = sqrt(252)
+	=> SR = sqrt(252)*mean(daily_retuns - daily_rf)/std(daily_retuns)

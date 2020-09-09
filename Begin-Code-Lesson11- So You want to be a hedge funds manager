@@ -1,0 +1,62 @@
+Lesson 11 - So You want to be a hedge funds manager
+
+11.2 - Computational investing:
+	1- Muốn trở thành quản lý quỹ đầu cơ ? 
+	2- Cơ chế thị trường ? 
+	3- Đánh giá công ty là gì ? 
+	4- The Capital Assets Pricing Model ( CAPM)
+	5- Quỹ đầu cơ sử dụng CAPM như thế nào
+	6- Phân tích kỹ thuật
+	7- Xử lý dữ liệu
+	8- Giả thiết thị trường hiệu quả
+	9- Luật cơ bản về quản lý hoạt động danh mục đầu tư 
+	10- tối ưu hóa danh mục đầu tư và biên giới hiệu quả
+
+11-3 - Type of funds:
+	- Có 3 loại: ETF (exchange-trade funds), Mutual funds, hedge funds
+	- ETF: + Giống cổ phiếu theo nghĩa có thể mua và bán chúng, 
+		có thể quan sát giá của chúng trong ngày.
+		+ CHúng đại diện cho giỏ cổ phiếu, đôi lúc chúng đại diện cho công cụ
+			giống như trái phiếu.
+		+ ETF rất minh bạch và rất lỏng.
+	- Mutual fund: 
+		+ Phần nào đó giống ETF, Chỉ có thể mua/bán vào cuối ngày
+		+ Họ không tiết lộ chính xác những gì họ đang nắm giữ ngoại trừ 
+			1 lần mỗi quý -> ít minh bạch hơn.
+		+ MF thể hiện cho cổ phiếu vốn hóa lớn giống như S&P 500
+	- Hedge funds:
+		+ Mua/bán sử dụng = hợp đồng => bí mật.
+		+ không tiết lộ.
+		+ không minh bạch.
+
+11.4 - Liquidity and capitalization ( Thanh khoản và vốn hóa)
+	- Liquid: Có nghĩa cái đó có thể mua/bán/chia sẻ giữa các người nắm giữ.
+	- ETF: là kiểu liquid. có khối lượng giao dịch/ngày rất lớn.
+	- Large cap: có nghĩa là capitalization ( vốn hóa): là đnáh giá giá trị của một công ty
+		là bao nhiêu theo số lượng cổ phiếu đang lưu hành nhân với số giá của cổ phiếu.
+
+11.5 - Incentives for fund managers: 
+	- How the funds managers make money
+	- AUM (Assets under management): tổng số  tiền đang được quản lý bởi quỹ.
+	- Managers of ETF- kiếm được tiền theo tỉ lệ phí (expense ratio) ( % AUM)
+		+ Các chi phí cho ETF thường khá thấp 0.01% or 1%
+	- Managers of Mutual fund: cũng kiếm tiền được theo tỉ lệ phí:
+		+ chi phí : 0.5% - 3%
+		+ Để quản lý Mutual Fund: cần nhiều kỹ năng , nhiều quyết định hơn> ETF, 
+	- ETF thường được gắn vơis một chỉ số , vd: ETF phổ biến là SPY, được cho là để theo dõi S&P500
+	- Hedge funds: 2% of AUM + 20% lợi nhuận
+
+	- Expense ratio: là loại chi phí dựa vào % AUM.
+	- Two and twenty: là loại dựa vào cả tích lũy AUM (2%) cũng như lợi nhuận (20%)
+	- Risk Taking ( chấp nhận rủi ro) -> hướng tới lợi nhuận lớn hơn => thúc đẩy bỏi mô hình Two&Twenty
+	
+	* ETF gần như chỉ theo dõi các chỉ số, chỉ số đó tăng hay giảm không phụ thuộc vào họ ( người quản lý quỹ)
+
+11.10 - Hedge fund goals and metrics:
+	- Goals: + Beat a benchmark ( đánh bại 1 điểm -> ví dụ: chọn những stock tốt trong S&P500 để có mô hình tốt
+				hơn chính s&p500)
+			+ Absolute return: thu được lợi nhuận tuyệt đối.
+	- mectric: 
+		+ cumulative return :val[-1]/val[0]    -    1
+		+ volatility: daily_returns.std()
+		+ risk/reward (Sharpe ratio)

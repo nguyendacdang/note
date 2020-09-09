@@ -1,0 +1,10 @@
+Lesson 10 - How to optimize a portfolio
+	- Sử dụng tối ưu, tìm minimize hàm f(x) trong đó:
+		f(x) là -Sharpe Ratio 
+		X - là allocation funds
+	
+10.5 - Ranges and contraints:
+	- Ranges: Limit on values for X: giá trị phân bổ đầu tư có trong khoản 0->1
+	- Contraints: thuộc tính của X là phải "đúng" -> tổng X = 1
+	
+	

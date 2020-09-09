@@ -1,0 +1,9 @@
+Lesson 6: Incomplete data:
+
+6.4 - Why this is bad  - What can we do? 
+	- Khi dữ liệu có những khoảng trống (gaps) thì ta cần phải fill, 
+	- nhưng không sử dụng nội suy để tính ra các điểm dữ liệu bị trống ( không được giao dịch)
+	- lấy giá trị cuối cùng rồi điền vào khoảng trống.
+	- sử dụng câu lệnh df.fillna(method='',inplace=True)
+		+ method: bfill, ffill (backward, foward)
+		+ inplace: save all change

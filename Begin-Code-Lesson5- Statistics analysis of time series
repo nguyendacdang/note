@@ -129,3 +129,22 @@ Lesson 5 - Statistical analysis of time series
 	- Daily returns: daily_return[t] = (price[t]/price[t-1]) - 1
 	( tính sự chênh lệch về giá, tăng giảm bao nhiêu phần trăm theo các ngày so với yesterday)
 5.11 - 
+	#Code: cách 1:
+		daily_returns = df.copy()
+		daily_return[1:] = (daily_return[1:]/daily_return[:-1].values) -1
+		daily_return.iloc[0,:] = 0
+		
+	Note: Tại sao daily_return[:-1] lại phải lấy value:
+		bởi vì đó khi thực hiện tính toán giữa 2 data frame  
+		pandas sẽ cố gắng tính toán cho mỗi row dựa trên index
+		như vậy, để muốn chia từng giá trị của dataframe
+		cho từng giá trị tương ứng ( không match theo index) 
+		phải sử dụng .values để chuyển về thành numpy array
+	#Code: Cách 2:
+		Sử dụng panda.
+		daily_return = (df/df.shift(1)) - 1
+	- sử dụng . df.fillna(0) -> replace nan = 0
+
+5.12 - Cumulative returns: ( lợi nhuận tích lũy )
+	cumulative = (price[t]/price[0])-1
+		

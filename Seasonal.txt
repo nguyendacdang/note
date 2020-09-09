@@ -20,3 +20,11 @@
 6/ Yếu tố mùa vụ cung/cầu
 	- The futures market có vẻ như không hoàn toàn có hiệu quả trong việc dự
 	đoán chiết khấu cung/cầu từ forward curve
+7/ Chúng ta tìm những cổ phiếu cá nhân có vẻ như có hiệu suất kém hoặc hiệu suất
+	tốt trong tháng giống nhau trong cùng một tháng mỗi năm.
+8/ - Dựa vào pattern trong ngày có thể khó khăn để khai thác do chi phí giao dịch.
+	- trong thị trường chứng khoán, chúng ta không thực sự thấy rõ được tác động của
+	yếu tố mùa vụ mặc dù chúng ta có thể dự đoán được mô hình biến động.
+	- trên thị trường ngoại hối, chúng tôi thấy một số bừng chứng về việc các đồng tiền 
+	chính suy yếu ( so với USD) trong múi giờ nhất định.
+	
