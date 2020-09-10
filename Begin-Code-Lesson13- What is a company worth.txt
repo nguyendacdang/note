@@ -1,0 +1,52 @@
+Lesson 13 - What's a company worth
+
+13.3 Why company value matters
+    
+    - Các cách estimate true value của company
+        + intrinsic value: dựa trên giá trị của công ty được estimate bởi cổ tức
+            trong tương lai.
+        + Book value: dựa trên tài sản mà công ty sở hữu.
+        + Market cap: dựa vào giá trị của cổ phiếu trên thị trường và bao nhiêu cổ 
+            phiếu đang lưu hành.
+
+13.5 - The value of a future dollar
+
+    - PV: present value
+    - FV: future value
+    - IR: interest rate: lãi suất
+
+        PV = FV/(1+IR)^i 
+        i- thời gian hưởng lãi suất (1 năm i = 1)
+
+        ví dụ: IR = 1% , => 1/(1+0.1) = 0.99
+        Giá trị của hóa đơn 1$ trong tương lai sau 1 năm thì bây giờ phải trả 0.99$
+    - Nếu được hứa cho 1$ trong tương lai, => giá trị của 1$ sẽ giảm dần trong tương lai
+
+13.6 - intrinsic value:
+    - IR: (lãi suất) liên quan đến mức độ rủi ro của công ty -> hứa sẽ trả IR mỗi năm
+    - Nếu khôgn chắc chắn -> tỉ lệ phải được cao lên và được gọi là tỉ lệ chiết
+        khấu (discount rate)
+    - DR: cao hơn nếu bạn ít tin tưởng vào công ty hơn hoặc nghĩ rằng nó rủi ro hơn.
+
+    -> giá trị của công ty = Tổng i -> inf của PV  ( Tổng PV của cty qua các năm)
+
+    -> theo công thức tính PV 
+    mà tổng vô hạn của 1/n^1 = 1/(n-1)
+
+    => giá trị công ty = FV/DR
+    FV là dividend , DR tỉ lệ chiết khấu
+
+13.8 - Book Value:
+    - Tổng tài sản trừ đi tài sản vô hình và nợ.
+    - Tài sản vô hình (Intangible assets) là thứ gì đó rất khó định giá.
+        VD: giá trị thương hiệu, 
+    
+13.9 - Market capitalization
+
+13.10 - Why information affects stock price
+    - Để ý rằng khi có thông tin mới về 1 công ty cụ thể -> giá cổ phiếu của nó có thể thay đổi đáng kể
+    - Có 3 loại:
+        + Loại thông tin ảnh hưởng tới công ty cụ thể 
+        + Loại thông tin ảnh hưởng tới 1 nhóm công ty 
+        + Loại thông tin ảnh hưởng tới tất cả các công ty có trên thị trường
+    => Các thông tin sấu ảnh hưởng chú yếu do làm giảm sự mong đợi về cổ tức trong tương lai

@@ -1,0 +1,28 @@
+Lesson 14 - The Capital Assets Pricing Model
+    - CAPM ( Capital Assets Pricing Model) is a mathematical framework fỏ hedge fund investing
+
+14.2 - Definition of a portfolio
+    - portfolio là 1 tập hợp trọng số của tài sản 
+
+14.4 - The market portfolio
+
+    - markets: 
+        US: SP500
+        UK: FTA
+        Japan: TOPIX 
+    => Sectors:
+        +Energy
+        + Technology
+        + Manùacturing
+        + Finances
+
+14.5 - The CAPM equation
+    r_i(t) = B_i*r_m(t) + a_i(t)
+    return của stock i trong ngày t = beta*return on the market tại ngày t 
+    + alpha của stock đó trong ngày đó.
+
+    - beta*r_m(t) là phần đáng kể của return của stock theo thị trường
+    - mọi tác động của thị trường lên cổ phiếu đề được gói gọn trong beta
+    - mỗi stock có một beta riêng
+    - Nhiều stock có beta gần với 1 -> điều đó có nghĩa là khi market tăng 1%
+        hoặc giảm 1% -> stock cũng tăng/giảm 1%
