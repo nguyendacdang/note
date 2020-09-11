@@ -49,3 +49,6 @@ accumulate - v - tích lũy, tích trữ
 outstanding- adj - lưu hành
 interest rate - n - lãi suất
 attract - thu hút
+versus - so với, đấu với
+implication - n - ngụ ý, hàm ý
+arbitrage - chênh lệch, chênh lệch giá 

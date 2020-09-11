@@ -26,3 +26,16 @@ Lesson 14 - The Capital Assets Pricing Model
     - mỗi stock có một beta riêng
     - Nhiều stock có beta gần với 1 -> điều đó có nghĩa là khi market tăng 1%
         hoặc giảm 1% -> stock cũng tăng/giảm 1%
+    -alpha (residual - phần dư): random with mean  = 0 
+
+14.7 - CAPM vs Active management
+    - Passive invested: về cơ bản nói rằng bạn chỉ nên mua một danh mục đầu
+        tư chỉ số (giống như mua thứ gì đó đại diện cho SP500) 
+        và giữ đến khi nó phát triển.
+    - Active invested: không chỉ mua danh mục đầu tư chỉ số mà còn chọn các cổ
+        phiếu riêng lẻ 
+
+14.8 - CAPM for portfolio
+
+14.11 - Arbitrage Pricing Theory (APT - lý thuyết chênh lệch giá)
+    
