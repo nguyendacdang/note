@@ -1,0 +1,29 @@
+Lesson 16 - Technical Analysis
+
+16.1 - Technical versus fundamental Analysis
+    - Có 2 loại hướng tiếp cận lớn dùng để chọn stocks cho buy/sell
+        + Technical Analysis: không care giá trị công ty -> nhìn vào pattern of trends của stock's price
+
+        + Fundamental Analysis: đánh giá giá trị côgn ty và price stock
+
+16.2 - Characteristics (nét đặc trưng)
+    - It looks only at historical price and volume
+    - Tính toán thống kê gọi là chỉ số (indicators)
+
+16.4 - When is Technical Analysis valuable 
+    - Các chỉ số riêng lẻ, tự chúng, có tính dự báo yếu.
+    - Combinations stronger
+    - Look for contrasts ( tìm kiếm cổ phiếu tương phản với thị trường)
+    - Khoảng thời gian ngắn.
+
+16.6 - Một vài chỉ số tốt
+    - momentum: momentum[t] = price[t]/price[t-n]
+    - Simple moving average (SMA) : giá trị trung bình n-window
+
+16.10- Normalization
+    - SMA ( price[t]/giá trị đường trung bình trượt tại t) : -0.5 ~ 0.5
+    - momentum (price[t]/price[t-n]) -0.5 ~ 0.5
+    - Bollinger Bands ((price[t] - SMA[t])/2*std) -1.0 ~ 1.0
+
+    normed = (values - mean)/(value.std())
+    -> normed.mean() = 0 , normed: -1~1

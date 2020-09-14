@@ -1,0 +1,39 @@
+Lesson 15- How hedge funds use the CAPM
+
+15.2 - Two stock scenario
+    - Giả sử có 2 cổ phiếu A và B:
+        Dựa vào machine learning hoặc phân tích ta có:
+        A: dự đoán tăng 1% so với market trong 10 ngày tiếp.
+        B: dự đoán giảm 1% so với market trong 10 ngày tiếp.
+        Nhìn vào các số liệu quá khứ để tìm beta thì ta có:
+        A: beta = 1.0
+        B: beta = 2.0
+    - Giả sử đầu tư mua vào 50$ stock A, => long $50
+    - Giả sử đầu tư bán khống 50$ stock B. => short -$50
+    r_A = beta_A*r_m + alpha_A
+    r_B = beta_B*r_m + alpha_B
+
+    => giả sử thời gian tiếp theo r_m = 0%
+    => r_A = alpha_A
+    => r_B = alpha_B
+    => lợi nhuận của danh mục đầu tư (portfolio)
+        r_p = r_A+r_B = 1%*0.5 + 1%*0.5 = 1%
+
+15.4 - Two stock CAPM math
+    r_p = Sum(wi*(beta_i*r_m + alpha_i))
+        = (w_A*beta_A + w_B*beta_B)*r_m + w_A*alpha_A + w_B*alpha_B
+    
+    => Tính được beta của portfolio và alpha portfolio.
+    với alpha là thông tin tin tưởng -> dự đoán 
+    còn beta là đại lượng chúng ta không biết về sự thay đổi 
+    của thị trường -> không có sự điều chỉnh cho thành phần này.
+    => nó được coi là rủi ro => remove bằng cách tính w_A*beta_A + w_B*beta_B = 0
+
+15.7 - CAPM for hedge funds summary
+
+    - Assuming
+        + Information -> alpha_i
+        + beta_i
+    - CAPM enables
+        + minimize market risk (beta_p = 0)
+        + w_i

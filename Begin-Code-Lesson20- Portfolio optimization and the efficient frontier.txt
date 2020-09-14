@@ -1,0 +1,11 @@
+Lesson 20 - Portfolio optimization and the efficient frontier
+
+20.7 - Mean Variance optimization
+    - Có 4 yếu tố cần đưa vào để tối ưu:
+        + Expected return  ( cho mỗi stock)
+        + volatility ( sự biến động của mỗi stock)
+        + covariance ( ma trận hiệp phương sai của từng stock đối với từng stock khác)
+        + Target return: Lợi nhuận mục tiêu hướng tới.
+
+20.8 - The efficient frontier
+    

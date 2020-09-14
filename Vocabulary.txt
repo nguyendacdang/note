@@ -52,3 +52,6 @@ attract - thu hút
 versus - so với, đấu với
 implication - n - ngụ ý, hàm ý
 arbitrage - chênh lệch, chênh lệch giá 
+appropriate - adj - thích hợp
+dealing - xử lý
+aggregated - v - tổng hợp

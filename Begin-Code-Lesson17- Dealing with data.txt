@@ -1,0 +1,17 @@
+Lesson 17 - Dealing with data ( Xử lý dữ liệu)
+
+17.4 - Stock Splits
+    - Khi đạt mức giá quá cao, cổ phiếu có thể bị tách ra để cho giá thấp hơn -> 
+        đảm bảo tính thanh khoản cao của cổ phiếu.
+    - Khi giá cao -> Splits
+    - Vấn đề ? Trên data prices -> sụt giảm mạnh -> computer hiểu sai về dữ liệu
+        -> đưa ra các dự đoán sai.
+    - Solution adjusted close hoặc adjusted prices
+
+17.6 - Dividends
+    - Giả sử giá cổ phiếu xoay quanh 100$
+    - Côgn bố sẽ trả lợi tức 1$ cho mỗi cổ phiếu.
+    => giá cổ phiếu ngày trước chia cổ tức là 101 và giảm xuống còn 100 
+    trong ngày chia cổ tức.
+
+17.8 - Adjusting for Dividends

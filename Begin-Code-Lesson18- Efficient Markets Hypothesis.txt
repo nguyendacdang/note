@@ -1,0 +1,24 @@
+Lesson 18 - Efficient Markets Hypothesis
+
+18.2 - EMH assumptions 
+    - Số lượng nhà đầu tư lớn.
+    - Thông tin mới đến ngẫu nhiên.
+    - Prices adjust quickly
+    - Price reflect all available information
+
+18.3 - Origin of information:
+    - thông tin có thể đến từ rất nhiều nơi nhưng có 4 cái cơ bản
+    được sắp xếp theo hướng public -> least public
+        + Price/volume
+        + Thông tin cơ bản (công bố hàng tháng or quý or năm)
+        + Ngoại sinh (Exogenous) ví dụ như giá xăng ảnh hưởng giá hàng không.
+        + Thông tin mật trong công ty.
+
+18.4 - Dạng của EMH
+    - Có 3 dạng của EMH
+    + Dạng yếu: NÓi rằng giá tương lai không thể dự đoán bằng cách phân 
+        tích giá trước đó.
+    + semi-strong: cho thấy Price adjust ngay lập tức khi có new public information
+        VD: Cty có báo cáo hàng quý chứa thông tin cơ bản, => Price
+        phản ứng ngay với thong tin đó.
+    + Strong: Price reflect all information public and private

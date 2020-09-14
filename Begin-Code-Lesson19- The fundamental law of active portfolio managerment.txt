@@ -1,0 +1,25 @@
+Lesson 19  - The fundamental law of active portfolio management
+
+19.2 - Grinold's fundamental law
+
+    Performance = skill * sqrt(breadth)
+    => tăng Performance có thể tăng skill ( khả năng chọn cổ phiếu) hoặc tăng
+    bề rộng đầu tư .
+
+19.12 - IR, IC and breadth
+    - IR ( information ratio) 
+        r_p(t) = beta_p*r_m(t) + alpha_p(t)
+        
+        = market + skill
+
+    - IR = alpha_p(t).mean() / alpha_p(t).std()
+    - IR giống như Sharpe ratio của phần lợi nhuận dư.
+
+    - IC (information coefficient): chỉ mối tương quan giữa manager's forecast 
+         to actual returns.
+        
+    - BR (breadth): Số lượng cơ hội giao dịch mỗi năm.
+
+19.14 - The fundamental law
+
+    IR = IC*sqrt(BR)
