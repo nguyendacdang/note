@@ -1,0 +1,9 @@
+Lesson 21 - How machine learning is used at a hedge fund
+
+21.4 Supervised regression learning
+    => Supervised (provide example x,y) regression (numeric prediction) learning( train with data)
+    - Linear regression (parrametric)
+    - K nearest neighbor (KNN) (Instance based)
+    - decision trees
+    - decision forests
+    

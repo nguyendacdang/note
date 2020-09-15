@@ -55,3 +55,4 @@ arbitrage - chênh lệch, chênh lệch giá
 appropriate - adj - thích hợp
 dealing - xử lý
 aggregated - v - tổng hợp
+variation - n - biến thể 

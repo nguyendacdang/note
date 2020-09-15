@@ -1,0 +1,6 @@
+Lesson 22 - Regression
+
+22.5 - Kernel Regression
+    - Điểm khác nhau duy nhất giữa Kernel Regression với KNN
+        là tính giá trị trung bình của Kernel Regression dựa theo trọng 
+        số (khoảng cách)

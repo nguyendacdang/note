@@ -1,0 +1,7 @@
+Lesson 24:
+
+24.2 - Ensemble learners
+    - Tại sao Ensemble:
+        + Lower error
+        + Less overfitting
+        
