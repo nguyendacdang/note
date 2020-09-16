@@ -1,0 +1,34 @@
+Lesson 25 - Reinforcement Learning
+
+25.5 - Markov decision problems
+    Bao gồm các thành phần sau :
+    - Set of states S (Tập các trạng thái S có thể có)
+    - Set of states A (Tập các action A có thể có)
+    - Transition function T(s,a,s'): là một mảng đa chiều lư giữ giá trị xác suất
+        khi state S, action A và thay đổi enviroment thành state S'
+        Lưu ý, khi có state s, action a -> tổng xác suất phải bằng một 
+    - Reward function R(s,a) -> Reward khi state s và action action
+
+25.6 - Unknown Transition and Rewards
+    - Trong hầu hết thời gian chúng ta không biết được Transition function và Reward function
+        -> bản thân sẽ tương tác với thế giới -> quan sát sự thay đổi:
+        ví dụ: với state s1, ta có action a1 -> môi trường thay đổi dẫn tới state s1'
+        và thu được r1
+            => <s1, a1, s1', r1> 
+            Cứ như vậy ta thu được bộ data qua thời gian.
+        Và dựa vào bộ data đó ta sẽ tìm policy pi.
+        Bằng 2 cách:
+    * Tìm policy
+        - Model-based Reinforcement Learning
+            + dựa vào bộ data chúng ta có -> build model of T[s,a,s']
+            + build Reward model R[s,a]
+            + Khi đã có những model trên, sử dụng value interation hoặc policy interation -> tìm pi
+        - Model-free
+            + Q-Learning
+            + model-free là phương thức phát triển 1 policy
+                chỉ bằng hướng quan sát data
+
+25.7 - What to optimize
+    - infinite horizone: tổng r_i khi i-> inf
+    - finite horizone: tổng r_i khi i-> n
+    - discounted reward: tổng gamma(mũ i-1)*r_i với 0 < gamma <= 1 với i -> inf

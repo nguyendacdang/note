@@ -56,3 +56,5 @@ appropriate - adj - thích hợp
 dealing - xử lý
 aggregated - v - tổng hợp
 variation - n - biến thể 
+transition - n - chuyển đổi
+interact - v - tương tác
