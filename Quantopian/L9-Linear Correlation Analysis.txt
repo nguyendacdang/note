@@ -1,0 +1,12 @@
+Hệ số tương quan r = Hiệp phương sai ( X, Y )/ std(X)std(Y)
+r nằm trong khoảng -1 đến 1 
+r = -1 => 2 biến nghịch , = 1 thuận, = 0 không tương quan
+
+- tính ma trận hiệp phương sai = np.cov(X,Y)
+- tính hệ số tương quan = np.corrcef(X,Y)
+
+- Hệ số tương quan dùng để xác định tài sản tương quan
+
+- Tạo danh mục đầu tư không liên quan giữa các tài sản với nhau
+- Xem xét biểu đồ hệ số phụ thuộc của 2 DataFrame = df1.rolling(window=60).corr(df2)
+- Hệ số tương quan rất nhạy cảm với nhiễu

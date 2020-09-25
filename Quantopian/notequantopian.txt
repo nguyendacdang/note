@@ -1,0 +1,7 @@
+- numpy array có thể lấy boolean array = a[a< 100]
+- Tính geometric mean = scipy.stats.gmean()
+- Tính Harmonic mean = scipy.stats.hmean()
+- Tính skew = scipy.stats.skew() ( độ lệch) ( normal distribution có skew = 0 )
+- Tính kurtosis = scipy.stats.kurtosis() = kurtosis - 3  ( Tính độ nhọn normal distribution có kurtosis = 3) 
+- Kiểm thử Jarque-Bera = statsmodels.stats.stattools.jarque_bera()
+- plt.hist([normal[:10], normal[10:100], normal[100:250], normal], normed=1, histtype='bar', stacked=True) // Vẽ biểu đồ hist stack 

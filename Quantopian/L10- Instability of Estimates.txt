@@ -1,0 +1,10 @@
+- Mọi tham số đề là ước lượng
+- Cần xác định độ ổn đinh/ sai số chuẩn/ khoảng tin cậy của các tham số
+- Cách kiểm tra tính ổn đinh -> xe sự biến đổi của tham số khi hay đổi các dataset. thêm dữ liệu.
+- Jarque-Bera có P-value < 0.05 -> không tuân theo phân phối chuẩn
+
+- Sharpe ratio là thống kê thường được dùng để miêu tả performance của tài sản và danh mục đầu tư.
+- Sharpe ration đo mức độ lợi nhuận/ mức độ rủi ro. và liên quan tới nguồn sinh lợi không rủi ro như 
+    trái phiếu kho bạc.
+    R=E[ra−rb]/√Var(ra−rb)
+    

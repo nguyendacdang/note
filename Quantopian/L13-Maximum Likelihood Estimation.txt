@@ -1,0 +1,13 @@
+- sử dụng thư viện scipy.stats import norm
+- pdf (Probability density function.)
+-   #Code hiển thị biểu đồ histogram của return cũng như PDF khi fit return vào normal distribution
+    mean = fpt_returns.values.mean()
+    std = fpt_returns.values.std()
+    x = np.linspace(-0.06,0.06,100)
+    pdf = norm.pdf(x, loc=mean, scale=std)
+    plt.hist(fpt_returns,bins=x,histtype='stepfilled', alpha=0.2,density=True)
+    plt.plot(x,pdf)
+    plt.show()
+
+    ngoài ra mean, std cũng có thể tính = cách sau ;
+    mean,std = norm.fit(fpt_returns)

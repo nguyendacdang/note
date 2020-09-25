@@ -1,0 +1,15 @@
+- có thể sử dụng thư viện from statsmodels regression
+    model = regression.linear_model.OLS(Y,X).fit()
+
+- Hồi quy tuyến tính cho chúng ta một model cụ thể nhưng giới hạn trong trường hợp phụ thuộc tuyến tính
+- Hệ số tương quan là chung cho phụ thuộc tuyến tính và phụ thuộc phi tuyến tính nhưng không cho 
+    chúng ta 1 model cụ thể.
+- Cả 2 linear regression và correlation đều là thước đo của hiệp phương sai 
+- Mô hình hồi quy dựa trên một số giả định sau :
+    + Biến độc lập không random
+    + var(error) là không đổi qua các bộ dữ liệu quan sát
+    + Error không tự tương quan. Sử dụng kiểm định Durbin-Watson, nếu tiến gần tới 2 -> không tự tương quan.
+    + Error tuân theo normal distribution
+
+- Có thể sử dụng thư viện import seaborn để vẽ đường thẳng đơn giản như sau:
+    seaborn.regplot(Y,X) với khoảng tin cậy 95%

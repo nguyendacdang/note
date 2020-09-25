@@ -1,0 +1,27 @@
+- Khi sử dụng hồi quy để tìm ra model cho data, thường giả sử 1 vài thứ cho data để thống kê.
+    -> có thể vi phạm...
+- Chúng ta muốn tham số phải tuân theo:
+    + Giá trị kì vọng qua các sample khác nhau là tru value 
+    + Giá trị hội tụ với nhiều sample
+    + có phương sai bé nhất.
+
+- Focus on the residuals
+    - Tính residuals ( phần dư) , kì vọng là residuals tuân theo phân phối nào đó 
+        thường là normal , nếu k thì có vấn đề với model.
+
+- Residuals not normally-distributed
+    - Nếu error k tuân theo normal distribution nhưng nếu dataset lớn vẫn oke, vì 
+        định lý giới hạn trung tâm/
+    - Cách test tốt nhất thông thường sử dụng Jarque-Bera. statsmodels.stats.stattools.jarque_bera
+        nếu P-value > 0.05 =? tuân theo normal distribution
+
+- Heteroskedasticity (Phương sai thay đổi)
+    - có nghĩa là phương sai của error không phải constant, thay đổi qua các quan sát.
+    - Sử dụng stats.diagnostic.het_breushpagan hoặc kiểm định Fish (F)
+
+- Serial correlation of errors
+    - Sử dụng Durbin-Watson ( -> 2 thì không có tự tương quan)
+    - có thể sử dụng statsmodels.tsa.stattools.acf(y, qstat=True) 
+        _, prices_qstats, prices_qstat_pvalues = statsmodels.tsa.stattools.acf(y, qstat=True) . số lượng
+            p-value > 0 => số trễ.
+    
