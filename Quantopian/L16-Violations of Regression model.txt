@@ -19,9 +19,17 @@
     - có nghĩa là phương sai của error không phải constant, thay đổi qua các quan sát.
     - Sử dụng stats.diagnostic.het_breushpagan hoặc kiểm định Fish (F)
 
-- Serial correlation of errors
+- Serial correlation of errors ( tự tương quan)
     - Sử dụng Durbin-Watson ( -> 2 thì không có tự tương quan)
     - có thể sử dụng statsmodels.tsa.stattools.acf(y, qstat=True) 
         _, prices_qstats, prices_qstat_pvalues = statsmodels.tsa.stattools.acf(y, qstat=True) . số lượng
             p-value > 0 => số trễ.
+
+- Multicollinearity ( đa cộng tuyến)
+    - Loại bỏ các biến không cần thiết
+    - Đa cộng tuyến là các biến có phụ thuộc lẫn nhau ví dụ : X2 ~~ X1 + 2X3 - 2
+    - Tương quan cao giữa các biến độc lập là biểu hiện của đa cộng tuyến
+    - Nếu R-squared cao nhưng t-statistics cho các hệ số thấp (Sự phù hợp là tốt, nhưng các hệ số không được ước lượng chính xác)
+        => Có thể nghi ngờ có đa cộng tuyến
+    - Để giải quyết vấn đề đó -> có thể loại bỏ một số biến độc lập có liên quan tới hệ tuyến tính.
     
