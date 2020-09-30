@@ -1,0 +1,20 @@
+- Statistical reference (suy luận thống kê) là quá trình thực hành việc dự đoán về một nhóm lớn
+    dựa nhên mẫu nhỏ. Và theo truyền thống chia làm 2 phần:
+    + Estimation
+    + Hypothesis testing
+- Estimation: Cung cấp các giá trị cho những thứ mà bạn quan tâm như mean, std, variance, Và 
+    cung cấp khoảng tin cậy.
+    Khoảng tin cậy cung cấp một vùng mà bạn có thể mong đợi để tìm giá trị thực của thông số 
+    mà đã ước tính vì ước tính hầu như không bao giờ chính xác.
+    Khoảng tin cậy dùng mức độ tin cậy được chọn.
+
+- Nếu reject H0 - nói rằng kết quả có ý nghĩa thống kê
+    ngược lại - nói rằng kết quả không có ý nghĩa thống kê.
+
+- Nếu test : H0 :  θ≤θ0 ,  HA :  θ>θ0  at  α=0.05
+            Bác bỏ H0 khi z>1.645
+- Nếu test : H0 : θ≥θ0, HA: θ<θ0 at α=0.05
+            Bác bỏ H0 khi z<−1.645
+
+- P-value là mức có ý nghĩa nhỏ nhất để có thể bác bỏ giả thuyết H0.
+    p-value < α => bác bỏ H0

@@ -1,0 +1,73 @@
+
+- Giải thích 60% dữ liệu với 2,3 tham số tốt hơn là 90% dữ liệu với 10.
+- khi sử dụng rolling - lựa chọn window là quan trọng.
+    thuật toán tính window tối ưu:
+    
+#Code
+# Trade using a simple mean-reversion strategy
+def trade(stock, length):
+    
+    # If window length is 0, algorithm doesn't make sense, so exit
+    if length == 0:
+        return 0
+    
+    # Compute rolling mean and rolling standard deviation
+    rolling_window = stock.rolling(window=length)
+    mu = rolling_window.mean()
+    std = rolling_window.std()
+    
+    # Compute the z-scores for each day using the historical data up to that day
+    zscores = (stock - mu)/std
+    
+    # Simulate trading
+    # Start with no money and no positions
+    money = 0
+    count = 0
+    for i in range(len(stock)):
+        # Sell short if the z-score is > 1
+        # bán khống cổ phiếu 
+        # khi nằm trên đường bollinger-bands
+        if zscores[i] > 1:
+            #thu được money = price do bán khống 1 cổ phiếu
+            money += stock[i]
+            #âm 1 cổ phiếu do bán khống
+            count -= 1
+        # Buy long if the z-score is < 1
+        elif zscores[i] < -1:
+            #money - price dùng để mua 1 cổ phiếu
+            money -= stock[i]
+            #số cổ phiếu + 1
+            count += 1
+        # Clear positions if the z-score between -.5 and .5
+        elif abs(zscores[i]) < 0.5:
+            #Số lợi nhuận kiếm được
+            money += count*stock[i]
+            count = 0
+    return money
+
+# Find the window length 0-254 that gives the highest returns using this strategy
+length_scores = [trade(pricing, l) for l in range(255)]
+best_length = np.argmax(length_scores)
+print 'Best window length:', best_length
+
+# Get pricing data for a different timeframe
+start2 = '2013-01-01'
+end2 = '2015-01-01'
+pricing2 = get_pricing('MCD', fields='price', start_date=start2, end_date=end2)
+
+# Find the returns during this period using what we think is the best window length
+length_scores2 = [trade(pricing2, l) for l in range(255)]
+print best_length, 'day window:', length_scores2[best_length]
+
+# Find the best window length based on this dataset, and the returns using this window length
+best_length2 = np.argmax(length_scores2)
+print best_length2, 'day window:', length_scores2[best_length2]
+
+
+- Tránh overfitting có thể sử dụng Kalman Filter
+
+- Avoiding overfitting
+    + Out of sample testing: chia dữ liệu ra để lấy dự liệu testing
+    + Common Mistake: Abusing Out of Sample Data - sai lầm phổ biến, lạm dụng dữ liệu mẫu.
+    + Cross validation: chia dữ liệu thành n phần, train n-1 và test phần còn lại thực hiện n lần
+    + Tiêu chí thông tin : sử dụng AIC

@@ -1,0 +1,48 @@
+Các tiêu chí kiểm tra giả thiết về residual phù hợp của mô hình:
+- Linear fit : Mối quan hệ cơ bản phải là tuyến tính
+- Homoscedastic: dữ liệu nên không có xu hướng trong phương sai
+- Independent and Identically Distributed: phần dư của mô hình hồi quy nên độc lập và có phân phối giống nhau
+    và không có dấu hiệu tương quan nối tiếp (serial correlation)
+
+- Chúng ta có thể sử dụng phần dư để chẩn đoán về mối quan hệ mà đã ước lượng là thực hay giả. 
+- Sai số thống kê (Statical error) khác với residual:
+    + residual là chênh lệch giữa giá trị dự đoán của model với giá trị quan sát
+    + Statical error là sự khác giữa mô hình hồi quy và các giá trị kỳ vọng không quan sát được.
+        => Chúng ta sử dụng phần dư (residual) để cố gắng ước lượng error này.
+
+- residual random => có vẻ phù hợp
+- residual tuyến tính cho dữ liệu phi tuyến tính -> residual khôgn đối xứng với gtri 0 
+- phương sai sai số thay đổi là hiện tượng thiếu biến độc lập. (u_t chứ biến độc lập => phương sai thay đổi)
+- phương sai sai số thay đổi ảnh hưởng tới các độ chính xác của các tham số ước lượng trong mô hình.
+- Để kiểm thử phương sai sai số thay đổi ta sử dụng :   statsmodels.stats.diagnostic.het_breushpagan
+    //https://www.statsmodels.org/0.6.1/generated/statsmodels.stats.diagnostic.het_breushpagan.html
+    breusch_pagan_p = smd.het_breushpagan(model.resid, model.model.exog)[1]
+    print breusch_pagan_p
+    if breusch_pagan_p > 0.05:
+        print "The relationship is not heteroscedastic."
+    if breusch_pagan_p < 0.05:
+        print "The relationship is heteroscedastic."
+
+
+- Cách điều chỉnh phương sai sai số thay đổi.
+    + Differences Analysis : lấy trễ để dựng model
+    + Logarithmic Transformation: biến đổi Logarithmic
+    + Box-Cox Transformation: Biến đổi Box-Cox
+    + GARCH Modeling
+
+- Residuals and Autocorrelation:
+    - Tự tương quan là khi nó có liên quan tới chính giá trị delay của nó. ( v/d: nhiệt độ)
+    - Trong tài chính, giá cổ phiếu luôn luôn có tự tương quan trong khi stocks returns là
+        độc lập.
+    - Sử dụng Ljung-Box test để kiểm định tự tương quan của residual trong time series.
+        https://www.statsmodels.org/stable/generated/statsmodels.stats.diagnostic.acorr_ljungbox.html
+        
+        ljung_box = smd.acorr_ljungbox(residuals, lags = 10)
+        print "Lagrange Multiplier Statistics:", ljung_box[0]
+        print "\nP-values:", ljung_box[1], "\n"
+
+        if any(ljung_box[1] < 0.05):
+            print "The residuals are autocorrelated."
+        else:
+            print "The residuals are not autocorrelated."
+

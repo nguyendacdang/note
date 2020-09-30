@@ -1,0 +1,44 @@
+Sai sót của mô hình:
+
+- Exclusion of important variables (loại bỏ các biến quan trọng)
+    - Nếu bỏ sót 1 biết độc lập không có tương quan tới các biến độc lập khác -> không giải thích biến phụ thuộc tốt như có thể.
+    - Nếu bỏ sót 1 biến độc lập X2 có tương quan với X1 ( bao gồm X2) -> Hệ số của X1 sẽ cố gắng lấp đầy những thiếu sót về 
+        giải thích của biến X2 -> tăng khả năng tác động của X1 lên Y hơn là thực thế. Ngoài ra các giá trị ước lượng, hệ số ước
+        lượng cũng như sai số chuẩn ướng lượng là không nhất quán.
+        Ngoài ra làm cho tin rằng 2 biến phụ thuộc vvà độc lập có độ tương quan cao hơn bình thường. 
+
+- Inclusion of unneccessary variables (bao gồm các biến không cần thiết)
+    - Nếu chứa các biến không cần thiết -> adjusted R-squared thấp và ít chính xác hơn cho các hệ số hồi quy.
+    - Nếu chúng ta chứa các biến hầu hết là không liên quan, tuy nhiên có thể cải thiện gải mạo sự phù hợp và 
+        R-squared của model bằng cách thêm một chút các biến có tương quan nhẹ để phù hợp với sample data. 
+        (điều này dẫn tới R-squared cao nhưng thực tế có rủi ro overfitting)
+
+- Sai số trong đo lường biến độc lập
+    - sai số trong đo lường dẫn tới tương quan giữa u_t và biến độc lập 
+        => các hệ số bị chệch và không nhất quán. 
+            Vd: ta quan sát được Z_t... thực tế Z_t = X_t + u_t
+        đáng ra model sẽ là Yt=b0+b1Xt+ϵt
+        nhưng khi có sai số trong đo lường X_t :
+            Yt=b0+b1Zt+(−b1ut+ϵt)
+        => Cụ thể thì hệ số b_1 có xu hướng giảm.
+
+- Sai dạng function
+
+- Nonstationary time serires (Chuỗi thời gian không dừng)
+    - Chuỗi dừng là chuỗi có phân phối xác suất không đổi theo thời gian. -> mean & std là constant qua thời gian.
+    - Khi áp dụng regression model vào time series -> phải thêm giả định chúng là chuỗi dừng. nếu không t-statics cho mỗi param sẽ k hợp lệ.
+    - Bước ngẫu nhiên: xt=xt−1+ϵt
+        - trong đó ϵt là phương sai thay đổi , mean = 0 và không tự tương quan.
+        ví dụ: tỉ giá hối đoái thường được giả định là bước ngẫu nhiên.
+    - Bước ngẫu nhiên có thể làm cho p-value của các hệ số ước lượng < 0.05 nhưng là giả mạo.
+        và các tham số ước lượng đó là không nhất quán.
+    - Chúng ta có thể phát hiện ra bước ngẫu nhiên bằng cách kiểm tra có tồn tại unit root trong time series hay không. 
+        sử dụng phương pháp kiểm thử Dickey-Fuller:
+        from statsmodels.tsa.stattools import adfuller 
+        //https://www.statsmodels.org/dev/generated/statsmodels.tsa.stattools.adfuller.html
+        # Compute the p-value of the Dickey-Fuller statistic to test the null hypothesis that yw has a unit root
+        tính p-value của Dickey-Fuller cho giả thiết H0 : yww có unit root
+        print adfuller(yw)[1]
+        nếu p-value > 0.05 => không đủ cơ sở để bác bỏ giả thiết H0 ( có unit root -> là bước ngẫu nhiên)
+        hoặc có thể print adfuller(yw)
+        adf < critical value => không tồn tại unit root -> không phải bước ngẫu nhiên
