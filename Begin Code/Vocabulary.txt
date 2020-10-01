@@ -58,3 +58,6 @@ aggregated - v - tổng hợp
 variation - n - biến thể 
 transition - n - chuyển đổi
 interact - v - tương tác
+leverage - n - đòn bẩy
+debt - n - nợ.
+reinvest - v - tái đầu tư 

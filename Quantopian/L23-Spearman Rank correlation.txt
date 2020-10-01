@@ -1,0 +1,21 @@
+- Hệ số Spearman Rank cho phép xác định 2 chuỗi có di chuyển cùng nhau hay không,
+    khi 1 cái tăng(giảm) cái kia cũng tăng(giảm)
+    Khi so sánh không phải so sánh dữ liệu thô mà so sánh rank của dữ liệu
+        => hữu dụng khi không cùng đơn vị.
+
+- Cũng phù hợp cho các bộ dữ liệu không thỏa mãn các giả định mà các thử nghiệm khác yêu
+    cầu. VD: yêu cầu quan sát là normal distribution để sử dụng t-test
+
+- Tính rank bằng scipy.stats.rankdata()
+- Tính hệ số rank bằng scipy.stats.spearmanr()
+    Nếu hệ số > 0 => quan hệ thuận
+    Nếu hệ số < 0 => quan hệ nghịch.
+    nếu = 0 không có nghĩa là không có quan hệ.
+-Với trường hợp trễ -> spearman không thể detect relationship
+- Trong spearmanr : H0 : 2 data set là không tương quan 
+                    H1 : Có tương quan 
+            => P-value < 0.05 -> bác bỏ H0
+            => P-value > 0.05 -> Không thể khẳng định rằng có tương quan.
+
+- Real Work Use case: Evaluating a Ranking Model.
+    
