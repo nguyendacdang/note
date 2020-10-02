@@ -1,0 +1,14 @@
+- Tính ma trận hiệp phương sai ổn định :   
+    sử dụng Shrinkage Estimators:
+        (1−δ)S+δμ1
+    + S: ma trận hiệp phương sai của sample
+    + μ1: giá trị trung bình của phương sai.
+    + δ : Shrinkage constant
+
+- Tính δ tối ưu sử dụng Ledoit-Wolf Estimator:
+    
+            δ^∗max{0,min{κ^T,1}}
+
+    sklearn.covariance.ledoit_wolf(oos_returns)[0]     
+          https://scikit-learn.org/stable/modules/generated/sklearn.covariance.ledoit_wolf.html
+          
