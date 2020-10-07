@@ -1,0 +1,10 @@
+1- Giới thiệu về Transaction Costs:
+    - Transaction Costs được chia làm 2 loại:
+        + Direct (hoa hồng và phí): rõ ràng, dễ đo đạc và tương đối nhỏ.
+        + Indirect (tác động của thị trường và chi phí spread):
+    
+- Những thuộc tính của giao dịch có ảnh hưởng nhiều nhất tới slippage là:
+    + độ biến động
+    + tính thanh khoản
+    + Liên quan tới order size
+    + Bid-Ask spread (BID - giá mua, ASK - giá bán)

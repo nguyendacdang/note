@@ -1,0 +1,45 @@
+- Volume là số lượng giao dịch sảy ra cho 1 thiết bị, bộ thiết bị trong 1 khoảng tgian.
+- Volume thường cao sau khi thị trường mở
+- Volume trước khi đóng cửa cũng tương tự.
+
+- Slippage xảy ra khi lệnh mua/bán lớn đã điều chỉnh giá của thị trường lên/ xuống tương ứng.
+- Trượt giá thường không tốt trên những stocks có Volume nhỏ hoặc những cổ phiếu có vốn
+    hóa thấp.
+
+- Tính thanh khoản: dựa vào các biến số chính: 
+    + Trade size s
+    + Market Price pm
+    + Time to fill t 
+    + realized fill price pf
+
+    -> tính thanh khoản được hiểu là khả năng thực hiện giao dịch lớn nhanh mà không bị Slippage
+
+- Liquidity vs Volume: Liquidity và Volume là không giôgns nhau. Tính thanh khoản là đặc Tính
+quan trọng ảnh hưởng đến bạn có thể dễ dàng giao dịch hay k . Volume có liên quan nhưng là 
+đại diện cho thanh khoản.
+
+- One-siđe market: thị trường 1 phía. Khi thị trường có khối lượng lớn nhưng các lệnh 
+tới từ 1 phía. (ví dụ : nó xảy ra trong 1 sự kiện gây hoảng loạn )
+- Non-Continuous Prices: ví dụ: 1 cổ động muốn bán cổ phiếu của 1 công ty nhưng thay vì
+    bán trên thị trường -> họ bán bằng hình thức khác -> vẫn có khối lượng giao dịch lớn
+    nhưng k dành cho bạn.
+
+- Transaction Costs: thông thường được tính = Slippage + phí trả cho môi giới.
+
+- Tại sao Tính thanh khoản lại quan trọng? :
+    + Nó là nút thắt cổ chai cho giao dịch với bất kỳ chiến lược nào:
+        Khi có model thống kê -> đưa ra được điểm mục tiêu -> có ích khi biến những vị trí đó
+        thành các giao dihcj trên thị trường. -> phụ thuộc vào tính thanh khoản.
+
+    + Không có trường hợp hoàn hảo:
+    
+- Capital Base vs Liquidity: 
+    + Càng giao dịch nhiều vốn , càng khó để lấp đầy các giao dịch mà k có Slippage.
+    + Thông thường, tất cả các chiến lược đều có phạm vi vốn mà chúng có thể sinh lời.
+    + Giới hạn trên được định nghĩa bởi ràng buộc thanh khoản.
+    + Giới hạn dưới được định nghĩa bởi hoa hồng cho môi giới và sai số vị trí.
+
+- Tính thanh khoản thay đổi theo vốn hóa của thị trường.
+    - Cổ phiếu có vốn hóa cao hơn có khối lượng giao dịch tuyệt đối và thanh khoản cao hơn.
+    - Cổ phiếu khó vay/ngắn hạn và có thể bị thanh khoản 1 chiều.
+

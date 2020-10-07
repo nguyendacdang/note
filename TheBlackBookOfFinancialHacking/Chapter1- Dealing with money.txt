@@ -1,0 +1,42 @@
+- Có các loại giao dịch sau:
+    1- Day Trading: là mua và bán trong khoảng thời gian ngắn. (giao dịch trong ngày)
+    2- Scalping: mua/bán, giữ trong khoảng vài phút.( giao dịch lướt sóng)
+    3- Swing Trading: Giao dịch được giữ trong vài ngày ( giao dịch lướt sóng)
+    Nếu giữ stocks tính bằng năm -> không phải trader mà là nhà đầu tư
+
+- Trader được chia ra làm 2 loại:
+    1- Fundamental Trader: theo dõi TV, đọc báo => quyết định giao dịch
+    2- Technical Trander: Quyết định giao dịch dựa trên biểu đồ giá.
+
+- Financial Asset: cũng thường được gọi là Instrument hoặc Symbol -> đối tượng giao dịch.
+
+- Binary Option : là cổ phiếu phái sinh. Cá xem giá tăng/giảm trong 1 khoảng thời gian
+    và nhận được 75-95% win nếu đoán đúng.
+
+- CFD: (Contract of Difference). Tương tự như phái sinh, không cần mua cổ phiếu , thay vì đó là 
+    đặt cọc 1 khoản tiền cho môi giới gọi là Margin
+
+- Margin deposit: là tiền đặt cọc để đảm bảo khi lỗ, môi giới sẽ k phải đi đòi .
+- Margin có thể thấp = 0.5% giá trị thật của tài sản => bạn có thể giao dịch với volume gấp 200
+    lần vốn của mình. Hệ số 200 gọi là Laverage.
+
+- Balance: số tiền hiện tại trong tài khoản môi giới- số vốn + win - losses
+- Equity: là số tiền bạn có nếu đóng tất cả các giao dịch được mở.
+
+- Do leverage, => giá trị của các giao dịch có thể là số âm -> Equity có thể < Balance.
+- Equity thay đổi trong tất cả các khoảng thời gian cùng với giá của tài sản bạn sở hữu.
+- Balance chỉ thay đổi khi bạn mua hoặc bán thứ gì đó.
+
+
+- Ask - giá của tài sản mà có thể mua.
+- Bid - giá có thể bán.
+- Thông thường Ask > Bid.  
+- Spread = Ask - Bid
+- Đối với tiền tệ, Spread luôn trong khoảng 0.01 - 0.05% của giá.( 1...5pip)
+- bullish : dự đoán giá sẽ tăng
+- bearish : dự đoán giá sẽ giảm.
+- Entering/Opening - buying
+- Exiting/Closing - selling
+- PIP (Point in Percentage) : 1 Pip = 1 đơn vị của chữ số cuối cùng trong giá (trong tiền tệ thường có 4 số cuối sau dấu phẩy)
+- Lot: là khối lượng nhỏ nhất của hợp đồng bạn có thể mua.
+- Tick: là 1 điểm biểu thị cho thời gian + price (buy /sell cụ thể)
