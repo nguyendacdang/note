@@ -1,9 +1,8 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import scipy.stats as stats
-import statsmodels.api as api
-import call 
 
-
-stocks = np.array([1,2,3,4,5,6])
-print(stocks[:-1])
+np.random.seed(123)
+test = np.random.rand(6)
+print(test)
+a = (test[3] + test[-1])/2
+print(a)
+print(np.median(test))
